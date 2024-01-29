@@ -7,16 +7,9 @@
 
 <?php
 
-$rem = strtotime('2024-05-05 06:00:00') - time();
-$day = floor($rem / 86400);
-$hr  = floor(($rem % 86400) / 3600);
-$min = floor(($rem % 3600) / 60);
-$sec = ($rem % 60);
-if($day) echo "$day Days ";
-if($hr) echo "$hr Hours ";
-if($min) echo "$min Minutes ";
-if($sec) echo "$sec Seconds ";
-echo "Remaining...";
+$dt_end = new DateTime('May 3, 2024 2:00 PM');
+$remain = $dt_end->diff(new DateTime());
+echo $remain->d . ' days and ' . $remain->h . ' hours';
 
 ?>
   
