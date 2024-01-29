@@ -6,16 +6,17 @@
 </head>
 
 <body>
+    
     <?php
-    $date= '2018-08-31 06:30';
-    $strtotime=strtotime($date);
-    $start=date_create($date);
-    do{ 
-        $strtotime=strtotime($start->add( date_interval_create_from_date_string('1 day'))->format('Y-m-d H:i:s'));
-    }while(date('l',$strtotime)!='Friday');
-
-print($start->format('Y-m-d H:i:s'));
+$start->setTime(0,0);
+$countdown = date_diff($start,date_create($date));
+$days = $countdown->d>1?'days':'day';
+$hours = $countdown->h>1?'hours':'hour';
+$minutes = $countdown->i>1?'minutes':'minute';
+$countdown = $countdown->format("%D $days %H $hours %I $minutes");
+print_r($countdown);
     ?>
+    
 </body>
 
 </html>
