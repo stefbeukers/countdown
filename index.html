@@ -8,13 +8,13 @@
 <body>
     
     <?php
-$start->setTime(0,0);
-$countdown = date_diff($start,date_create($date));
-$days = $countdown->d>1?'days':'day';
-$hours = $countdown->h>1?'hours':'hour';
-$minutes = $countdown->i>1?'minutes':'minute';
-$countdown = $countdown->format("%D $days %H $hours %I $minutes");
-print_r($countdown);
+
+    $date = strtotime("December 3, 2009 2:00 PM");
+    $remaining = $date - time();
+
+    $days_remaining = floor($remaining / 86400);
+    $hours_remaining = floor(($remaining % 86400) / 3600);
+    echo "There are $days_remaining days and $hours_remaining hours left";
     ?>
     
 </body>
