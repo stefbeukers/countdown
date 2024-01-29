@@ -10,8 +10,8 @@ echo "Nog $days_texel dagen en $hours_texel uur tot Texel";
 $date = strtotime("May 29, 2024 6:00 AM");
 $italy = $date - time();
 
-$days_remaining = floor($italy / 86400);
-$hours_remaining = floor(($italy % 86400) / 3600);
-echo "Nog $days_remaining dagen en $hours_remaining uur tot Italië";
+$days_italy = floor($italy / 86400);
+$hours_italy = floor(($italy % 86400) / 3600);
+echo "Nog $days_italy dagen en $hours_italy uur tot Italië";
 
 ?>
