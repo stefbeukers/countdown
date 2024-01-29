@@ -7,9 +7,20 @@
 
 <?php
 
-$dt_end = new DateTime('May 3, 2024 2:00 PM');
-$remain = $dt_end->diff(new DateTime());
-echo $remain->d . ' days and ' . $remain->h . ' hours';
+$end_time = strtotime("2022-12-31 23:59:59"); // Countdown end time
+$current_time = time(); // Current timestamp
+$time_left = $end_time - $current_time; // Time remaining in seconds
+
+$days = floor($time_left / 86400); // 86400 seconds in a day
+$time_left = $time_left % 86400;
+
+$hours = floor($time_left / 3600); // 3600 seconds in an hour
+$time_left = $time_left % 3600;
+
+$minutes = floor($time_left / 60); // 60 seconds in a minute
+$seconds = $time_left % 60;
+
+echo "Time remaining until 2022-12-31 23:59:59: $days days, $hours hours, $minutes minutes, and $seconds seconds.";
 
 ?>
   
