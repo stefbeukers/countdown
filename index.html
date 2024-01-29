@@ -1,10 +1,17 @@
 <?php
 
 $date = strtotime("May 29, 2024 6:00 AM");
-$remaining = $date - time();
+$texel = $date - time();
 
-$days_remaining = floor($remaining / 86400);
-$hours_remaining = floor(($remaining % 86400) / 3600);
-echo "There are $days_remaining days and $hours_remaining hours left";
+$days_texel = floor($texel / 86400);
+$hours_texel = floor(($texel % 86400) / 3600);
+echo "Nog $days_texel dagen en $hours_texel uur tot Texel";
+
+$date = strtotime("May 29, 2024 6:00 AM");
+$italy = $date - time();
+
+$days_remaining = floor($italy / 86400);
+$hours_remaining = floor(($italy % 86400) / 3600);
+echo "Nog $days_remaining dagen en $hours_remaining uur tot Italië";
 
 ?>
